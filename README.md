@@ -275,3 +275,4 @@ query TestQuery($blogID: ID!) {
   }
 }
 ```
+[See my Blog for more information](https://developer123.blogspot.com/2020/01/graphql-react-and-net-core-web-api.html)
