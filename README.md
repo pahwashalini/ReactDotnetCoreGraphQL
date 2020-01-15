@@ -228,3 +228,50 @@ return query.ToList();
 }
 }
 ```
+
+You can run following Queries once all is done
+```
+# Write your query or mutation here
+ query TestQuery {
+  blogPosts {
+    blogPostID
+    title
+    blogText
+    postDate
+    blogPostAuthor {
+      authorID
+      firstName
+      lastName
+      emailID
+    }
+  }
+}
+
+#To send multiple queries, you can use aliases in the query.
+query test1{
+  blogsWithAuthorName: blogPosts{
+    title
+    blogText
+    blogPostAuthor{
+      firstName
+      lastName
+    }
+  }
+  blogTitleWithAuthorName:blogPosts{
+    title
+    blogPostAuthor{
+      firstName
+      lastName
+    }
+  }
+}
+#passing json parameter
+query TestQuery($blogID: ID!) {
+  blogPosts(blogPostID: $blogID) {
+    blogPostID
+    title
+    blogText
+    postDate
+  }
+}
+```
